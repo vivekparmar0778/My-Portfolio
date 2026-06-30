@@ -1,0 +1,49 @@
+:root {
+  /* Colors */
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --card-color: #334155;
+  --header-bg: rgba(15, 23, 42, 0.85);
+  --header-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.15);
+
+  --primary-color: #38bdf8;
+  --primary-hover: #0ea5e9;
+
+  --heading-color: #f8fafc;
+  --text-color: #cbd5e1;
+  --muted-color: #94a3b8;
+
+  --border-color: #475569;
+
+  /* Layout */
+  --header-height: 7.2rem;
+  --section-padding: 10rem 0;
+  --grid-gap: 4rem;
+
+  /* Shadow */
+  --shadow-sm: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.2);
+
+  /* Typography */
+  --fs-sm: 1.4rem;
+  --fs-base: 1.6rem;
+  --fs-lg: 1.8rem;
+  --fs-xl: 2.4rem;
+  --fs-2xl: 3.2rem;
+  --fs-3xl: 4.8rem;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Radius */
+  --radius-sm: 0.8rem;
+  --radius-md: 1.2rem;
+  --radius-lg: 2rem;
+  --radius-full: 999px;
+
+  /* Transition */
+  --transition: 0.3s ease;
+
+  /* Container */
+  --container-width: 120rem;
+}
