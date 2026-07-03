@@ -1,5 +1,4 @@
-@import url("./variables.css");
-@import url("./responsive.css");
+
 /* Reset */
 
 * {
@@ -34,7 +33,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    padding: 0 2rem;
+    padding-inline: 2rem;
     height: var(--header-height);
     & .logo {
       display: inline-flex;
