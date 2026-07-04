@@ -27,7 +27,6 @@
 @media (max-width: 768px) {
   .header {
     & .container {
-
       & .navbar {
         display: flex;
         flex-direction: column;
@@ -105,7 +104,7 @@
           align-items: flex-start;
           width: 100%;
           gap: 2rem;
-
+          flex: 1;
           & a {
             font-size: var(--fs-lg);
             font-weight: var(--fw-semibold);
@@ -117,7 +116,7 @@
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          margin-top: 30rem;
+          margin-top: auto;
           padding: 1rem 2rem;
           border-radius: var(--radius-full);
           background: var(--primary-color);
