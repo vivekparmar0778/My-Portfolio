@@ -16,6 +16,9 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
 }
+body.menu-open {
+  overflow: hidden;
+}
 
 /* Start Navbar */
 
