@@ -16,10 +16,30 @@
   <body>
     <header class="header">
       <div class="container">
-        <a href="#home" class="logo"
-          ><img src="images/logo.png" alt="Vivek Parmar"
-        /></a>
+        <a href="#home" class="logo">
+          <img src="images/logo.png" alt="Vivek Parmar" />
+        </a>
+
         <nav class="navbar">
+          <div class="mobile-menu-header">
+            <div class="mobile-brand">
+              <img src="images/logo.png" alt="Vivek Parmar" />
+
+              <div class="mobile-brand-text">
+                <h3>Vivek Parmar</h3>
+                <p>Frontend Developer</p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="close-menu-btn"
+              aria-label="Close Menu"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
           <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -27,19 +47,21 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+
+          <a href="#" class="mobile-resume-btn" download> Download Resume </a>
         </nav>
+
         <div class="navbar-actions">
           <a href="#" class="resume-btn" download>Resume</a>
-          <button
-            type="button"
-            class="mobile-menu-btn"
-            aria-label="mobile-menu-btn"
-          >
+
+          <button type="button" class="mobile-menu-btn" aria-label="Open Menu">
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>
       </div>
     </header>
+    <h1>Vivek Parmar</h1>
+    <div class="menu-overlay"></div>
     <script src="js/script.js" defer></script>
   </body>
 </html>
