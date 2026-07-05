@@ -4,7 +4,6 @@ const mobileMenu = document.querySelector(".navbar");
 const menuOverlay = document.querySelector(".menu-overlay");
 const navLinks = document.querySelectorAll(".nav-links a");
 
-
 mobileMenuBtn.addEventListener("click", () => {
   mobileMenu.classList.add("active");
   menuOverlay.classList.add("active");
