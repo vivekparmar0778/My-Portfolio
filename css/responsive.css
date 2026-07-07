@@ -504,6 +504,7 @@
   /* Contact Responsive */
   .contact-section {
     & .container {
+      padding-inline: 0;
       & .contact-wrapper {
         display: grid;
         grid-template-columns: 1fr;
