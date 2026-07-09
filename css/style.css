@@ -41,6 +41,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   overflow-x: hidden;
+  padding-top: var(--header-height);
 }
 body.menu-open {
   overflow: hidden;
@@ -73,11 +74,18 @@ body.menu-open {
 }
 
 /* Start Navbar */
-
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
   z-index: 1000;
+
+  height: var(--header-height);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--header-bg);
+  backdrop-filter: blur(12px);
 
   transition:
     background-color 0.3s ease,
@@ -197,10 +205,15 @@ body.menu-open {
 }
 
 .header.scrolled {
-  background-color: var(--header-bg);
-  border-bottom: 1px solid var(--border-color);
-  backdrop-filter: blur(12px);
   box-shadow: 0 0.8rem 2.4rem rgb(0 0 0 / 8%);
+}
+
+.header .container .nav-links a.active {
+  color: var(--primary-color);
+}
+
+.header .container .nav-links a.active::after {
+  transform: scaleX(1);
 }
 /* End Navbar */
 
@@ -911,3 +924,59 @@ body.menu-open {
   }
 }
 /* End Footer Section */
+
+/* One click button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+
+  width: 5rem;
+  height: 5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--primary-color);
+  color: var(--heading-color);
+
+  font-size: 2rem;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+
+  transition: var(--transition);
+
+  z-index: 999;
+
+  &:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+  }
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* revel animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

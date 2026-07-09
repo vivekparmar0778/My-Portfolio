@@ -116,7 +116,7 @@
     </section>
 
     <section class="about-section" id="about">
-      <div class="container">
+      <div class="container reveal">
         <div class="about-image">
           <img
             src="images/hero_img.webp"
@@ -166,7 +166,7 @@
     </section>
 
     <section class="skills-section" id="skills">
-      <div class="container">
+      <div class="container reveal">
         <span class="section-tag">My Skills</span>
 
         <h2 class="section-title">Technologies I Work With</h2>
@@ -211,7 +211,7 @@
     </section>
 
     <section class="projects-section" id="projects">
-      <div class="container">
+      <div class="container reveal">
         <span class="section-tag">My Projects</span>
 
         <h2 class="section-title">Featured Projects</h2>
@@ -265,7 +265,7 @@
     </section>
 
     <section class="contact-section" id="contact">
-      <div class="container">
+      <div class="container reveal">
         <span class="section-tag">Contact</span>
 
         <h2 class="section-title">Let's Work Together</h2>
@@ -372,7 +372,9 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <a href="#home" class="footer-logo"><img src="assets/favicon.png" alt="Vivek Parmar Logo"/></a>
+            <a href="#home" class="footer-logo"
+              ><img src="assets/favicon.png" alt="Vivek Parmar Logo"
+            /></a>
             <h3 class="footer-name">Vivek Parmar</h3>
             <p class="footer-description">
               Frontend Developer passionate about building fast, responsive, and
@@ -425,11 +427,16 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 Vivek Parmar. All rights reserved.</p>
+          <p>
+            &copy; <span id="year"></span> Vivek Parmar. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
 
+    <button class="scroll-top-btn" aria-label="Scroll to Top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <script src="js/script.js" defer></script>
   </body>
 </html>
