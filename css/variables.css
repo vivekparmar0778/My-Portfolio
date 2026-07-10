@@ -3,17 +3,20 @@
   --bg-color: #0f172a;
   --surface-color: #1e293b;
   --card-color: #334155;
-  --header-bg: rgba(15, 23, 42, 0.85);
+  --header-bg: rgba(15, 23, 42, 0.9);
   --header-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.15);
 
- --primary-color: #128ccddc;
---primary-hover: #0284c7;
+  /* Primary */
+  --primary-color: #21abe6;
+  --primary-hover: #0ea5e9;
 
-  --heading-color: #fff;
-  --text-color: #cbd5e1;
-  --muted-color: #94a3b8;
+  /* Text */
+  --heading-color: #ffffff;
+  --text-color: #e2e8f0;
+  --muted-color: #b6c2d1;
 
-  --border-color: #475569;
+  /* Border */
+  --border-color: #64748b;
 
   /* Layout */
   --header-height: 7.2rem;
