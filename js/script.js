@@ -154,7 +154,7 @@ revealElements.forEach((element) => {
 // Contact Form
 // ===========================
 
-const contactForm = document.getElementById("contactForm");
+const contactForm = document.getElementById("contact-form");
 const submitBtn = contactForm.querySelector('button[type="submit"]');
 
 contactForm.addEventListener("submit", (event) => {
