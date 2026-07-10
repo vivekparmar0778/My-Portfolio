@@ -21,7 +21,22 @@
     <meta name="author" content="Vivek Parmar" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0F172A" />
+    <meta name="twitter:card" content="summary_large_image" />
 
+    <meta
+      name="twitter:title"
+      content="Vivek Parmar | Frontend Developer Portfolio"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Explore my frontend development projects, skills, and portfolio."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://vivek-frontend-portfolio.netlify.app/assets/preview.png"
+    />
     <!-- Open Graph (Social Sharing) -->
     <meta
       property="og:title"
@@ -39,6 +54,11 @@
       content="https://vivek-frontend-portfolio.netlify.app/"
     />
 
+    <link
+      rel="canonical"
+      href="https://vivek-frontend-portfolio.netlify.app/"
+    />
+
     <!-- Replace with your preview image -->
     <meta
       property="og:image"
@@ -46,7 +66,15 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="icon" href="assets/favicon.webp" type="image/webp" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/variables.css" />
@@ -63,13 +91,23 @@
     <header class="header">
       <div class="container">
         <a href="#home" class="logo">
-          <img src="assets/favicon.png" alt="Vivek Parmar" loading="lazy" />
+          <img
+            src="assets/favicon.webp"
+            alt="Vivek Parmar Logo"
+            width="50"
+            height="50"
+          />
         </a>
 
         <nav class="navbar">
           <div class="mobile-menu-header">
             <div class="mobile-brand">
-              <img src="images/logo.png" alt="Vivek Parmar" />
+              <img
+                src="assets/favicon.webp"
+                alt="Vivek Parmar Logo"
+                width="50"
+                height="50"
+              />
 
               <div class="mobile-brand-text">
                 <h3>Vivek Parmar</h3>
@@ -137,6 +175,7 @@
                 href="https://github.com/vivekparmar0778"
                 target="_blank"
                 aria-label="GitHub"
+                rel="noopener noreferrer"
               >
                 <i class="fa-brands fa-github"></i>
               </a>
@@ -145,6 +184,7 @@
                 href="https://linkedin.com/in/vivek-parmar-416066420"
                 target="_blank"
                 aria-label="LinkedIn"
+                rel="noopener noreferrer"
               >
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
@@ -157,8 +197,12 @@
 
           <div class="hero-image">
             <img
-              src="images/hero_img.webp"
-              alt="Vivek Parmar Frontend Developer"
+              src="assets/hero_img.webp"
+              alt="Portrait of Vivek Parmar, Frontend Developer"
+              width="450"
+              height="600"
+              fetchpriority="high"
+              decoding="async"
             />
           </div>
         </div>
@@ -168,9 +212,12 @@
         <div class="container reveal">
           <div class="about-image">
             <img
-              src="images/hero_img.webp"
-              alt="Vivek Parmar - Frontend Developer"
+              src="assets/hero_img.webp"
+              alt="Portrait of Vivek Parmar"
+              width="450"
+              height="600"
               loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -278,8 +325,11 @@
               <div class="project-image">
                 <img
                   src="assets/project-1.webp"
-                  alt="Project Name"
+                  alt="Portfolio Website Screenshot"
+                  width="800"
+                  height="500"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -301,6 +351,7 @@
                   <a
                     href="https://vivek-frontend-portfolio.netlify.app/"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     Live Demo
@@ -309,6 +360,7 @@
                   <a
                     href="https://github.com/vivekparmar0778/My-Portfolio"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <i class="fa-brands fa-github"></i>
                     GitHub
@@ -352,6 +404,7 @@
                   <a
                     href="https://linkedin.com/in/vivek-parmar-416066420"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     linkedin.com/in/vivek-parmar
                   </a>
@@ -363,7 +416,11 @@
 
                 <div>
                   <h3>GitHub</h3>
-                  <a href="https://github.com/vivekparmar0778" target="_blank">
+                  <a
+                    href="https://github.com/vivekparmar0778"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     github.com/vivekparmar0778
                   </a>
                 </div>
@@ -422,7 +479,9 @@
                 required
               ></textarea>
 
-              <button type="submit">Send Message</button>
+              <button type="submit" aria-label="Send Contact Form">
+                Send Message
+              </button>
             </form>
           </div>
         </div>
@@ -434,9 +493,12 @@
           <div class="footer-brand">
             <a href="#home" class="footer-logo"
               ><img
-                src="assets/favicon.png"
+                src="assets/favicon.webp"
                 alt="Vivek Parmar Logo"
+                width="64"
+                height="64"
                 loading="lazy"
+                decoding="async"
             /></a>
             <h3 class="footer-name">Vivek Parmar</h3>
             <p class="footer-description">
