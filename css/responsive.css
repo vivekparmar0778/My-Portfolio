@@ -548,40 +548,56 @@
   /* Skills Responsive */
   .skills-section {
     padding-block: 4rem;
-    & .skills-grid {
-      grid-template-columns: 1fr;
+    & .container {
+      & .skills-grid {
+        grid-template-columns: 1fr;
+      }
     }
   }
-
   /* Projects Responsive */
   .projects-section {
     padding-block: 4rem;
-    & .project-card {
-      & .project-image {
-        & img {
-          height: 20rem;
+
+    & .container {
+      & .projects-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 2.5rem;
+      }
+
+      & .project-card {
+        width: 100%;
+        max-width: 50rem; 
+
+        & .project-image {
+          & img {
+            width: 100%;
+            height: 22rem; /* Better aspect ratio */
+            object-fit: cover;
+          }
         }
-      }
 
-      & .project-content {
-        padding: 2rem;
-      }
+        & .project-content {
+          padding: 2rem;
+        }
 
-      & .project-tech {
-        gap: 0.8rem;
-      }
+        & .project-tech {
+          gap: 0.8rem;
+        }
 
-      & .project-links {
-        flex-direction: column;
+        & .project-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
 
-        & a {
-          justify-content: center;
-          width: 100%;
+          & a {
+            flex: 1;
+            justify-content: center;
+          }
         }
       }
     }
   }
-
   /* Contact Responsive */
   .contact-section {
     padding-block: 4rem;
@@ -677,5 +693,72 @@
         padding-top: 2rem;
       }
     }
+  }
+}
+
+/* ===========================
+   Small Mobile (480px)
+=========================== */
+
+@media (max-width: 480px) {
+  .projects-grid {
+    gap: 2rem;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-image img {
+    height: 20rem;
+  }
+
+  .project-content {
+    padding: 1.8rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-links a {
+    width: 100%;
+  }
+
+  /* Contact */
+
+  .contact-section .container {
+    padding-inline: 1.5rem;
+  }
+
+  .contact-form,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ===========================
+   Extra Small Devices
+=========================== */
+
+@media (max-width: 360px) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .project-image img {
+    height: 18rem;
+  }
+
+  .project-content {
+    padding: 1.6rem;
+  }
+
+  .contact-section .container {
+    padding-inline: 1rem;
   }
 }

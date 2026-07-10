@@ -48,6 +48,21 @@ body.menu-open {
 }
 
 /* Reusable Classes */
+.about-section,
+.skills-section,
+.projects-section,
+.contact-section,
+.footer {
+  padding: var(--section-padding);
+}
+:is(.skills-section, .projects-section, .contact-section) .container {
+  text-align: center;
+}
+.container {
+  width: min(var(--container-width), calc(100% - 4rem));
+  margin-inline: auto;
+  padding: 2.5rem 2rem;
+}
 .section-tag {
   display: inline-block;
   padding: 0.6rem 1.4rem;
@@ -72,7 +87,17 @@ body.menu-open {
   color: var(--muted-color);
   margin-bottom: 3rem;
 }
-
+.social-links {
+  gap: 1.6rem;
+}
+.detail-card,
+.skill-card,
+.project-card,
+.contact-card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
 /* Start Navbar */
 .header {
   position: fixed;
@@ -81,7 +106,6 @@ body.menu-open {
   width: 100%;
   height: var(--header-height);
   z-index: 1000;
-
   height: var(--header-height);
   border-bottom: 1px solid var(--border-color);
   background-color: var(--header-bg);
@@ -98,10 +122,8 @@ body.menu-open {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    padding-inline: 2rem;
     height: var(--header-height);
-    width: min(120rem, calc(100% - 4rem));
-    margin-inline: auto;
+
     & .logo {
       display: inline-flex;
       align-items: center;
@@ -170,20 +192,19 @@ body.menu-open {
         white-space: nowrap;
         padding: 1rem 2rem;
         font-size: var(--fs-base);
-        font-weight: var(--fw-medium);
+        font-weight: var(--fw-semibold);
         text-decoration: none;
         background: var(--primary-color);
         color: var(--heading-color);
         border-radius: var(--radius-full);
-        transition:
-          background-color var(--transition),
-          transform var(--transition);
+        transition: all var(--transition);
+
+        &:hover {
+          background-color: var(--primary-hover);
+          transform: translateY(-2px);
+        }
       }
 
-      & .resume-btn:hover {
-        background: var(--primary-hover);
-        transform: translateY(-2px);
-      }
       & .mobile-menu-btn {
         display: none;
         align-items: center;
@@ -196,9 +217,10 @@ body.menu-open {
         color: var(--heading-color);
         font-size: var(--fs-xl);
         transition: color var(--transition);
-      }
-      & .mobile-menu-btn:hover {
-        color: var(--primary-color);
+
+        &:hover {
+          color: var(--primary-color);
+        }
       }
     }
   }
@@ -234,7 +256,6 @@ body.menu-open {
 /* Start Hero Section */
 
 .hero-section {
-  padding: var(--section-padding);
   min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
@@ -244,9 +265,6 @@ body.menu-open {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    width: min(120rem, calc(100% - 4rem));
-    margin-inline: auto;
-    padding: 1rem 2rem;
 
     & .hero-content {
       display: flex;
@@ -267,11 +285,22 @@ body.menu-open {
         margin-bottom: 1.2rem;
       }
       & .hero-subtitle {
+        margin-bottom: 3rem;
         font-size: clamp(2.4rem, 3vw, 3.6rem);
         font-weight: var(--fw-semibold);
-        color: var(--text-color);
-        margin-bottom: 2rem;
+        & #typing-text::after {
+          content: "|";
+          margin-left: 2px;
+          color: var(--primary-color);
+          animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+          50% {
+            opacity: 0;
+          }
+        }
       }
+
       & .hero-description {
         max-width: 58rem;
         font-size: var(--fs-lg);
@@ -296,9 +325,7 @@ body.menu-open {
           text-decoration: none;
           font-size: var(--fs-base);
           font-weight: var(--fw-semibold);
-          transition:
-            background-color var(--transition),
-            transform var(--transition);
+          transition: all var(--transition);
 
           &:hover {
             background-color: var(--primary-hover);
@@ -318,10 +345,7 @@ body.menu-open {
           text-decoration: none;
           font-size: var(--fs-base);
           font-weight: var(--fw-semibold);
-          transition:
-            background-color var(--transition),
-            border-color var(--transition),
-            transform var(--transition);
+          transition: all var(--transition);
 
           &:hover {
             background-color: var(--surface-color);
@@ -333,27 +357,40 @@ body.menu-open {
       & .social-links {
         display: flex;
         align-items: center;
-        gap: 1.6rem;
 
+        & i {
+          font-size: 3rem;
+        }
+
+        & .fa-envelope {
+          color: #ea4335;
+        }
+
+        & .fa-linkedin-in {
+          color: #0a66c2;
+        }
+
+        & .fa-github {
+          color: var(--heading-color);
+        }
         & a {
           display: inline-flex;
           align-items: center;
           justify-content: center;
           width: 4.8rem;
           aspect-ratio: 1;
+          border: 1px solid var(--border-color);
           border-radius: var(--radius-full);
-          background-color: var(--card-color);
           color: var(--text-color);
           font-size: var(--fs-lg);
           text-decoration: none;
-          transition:
-            background-color var(--transition),
-            color var(--transition),
-            transform var(--transition);
+          transition: all var(--transition);
 
           &:hover {
-            background-color: var(--primary-color);
-            color: var(--heading-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-full);
+            background-color: var(--surface-color);
+            color: var(--primary-color);
             transform: translateY(-2px);
           }
         }
@@ -366,8 +403,8 @@ body.menu-open {
 
       & img {
         width: 100%;
-        max-width: 60rem;
-        height: 65rem;
+        max-width: 50rem;
+        height: 55rem;
         object-fit: cover;
         border-radius: 42% 42% 48% 48% / 28% 28% 72% 72%;
         box-shadow: 0 20px 60px rgba(56, 189, 248, 0.18);
@@ -392,12 +429,7 @@ body.menu-open {
 /* Start About Section */
 
 .about-section {
-  padding: var(--section-padding);
-
   & .container {
-    width: min(120rem, calc(100% - 4rem));
-    margin-inline: auto;
-    padding: 1rem 2rem;
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
     align-items: start;
@@ -437,10 +469,7 @@ body.menu-open {
 
         & .detail-card {
           padding: 2rem;
-          background: var(--card-color);
-          border: 1px solid var(--border-color);
           border-radius: 1.6rem;
-          transition: var(--transition);
           height: 100%;
 
           & h3 {
@@ -470,78 +499,70 @@ body.menu-open {
 /* Start Skills Section */
 
 .skills-section {
-  padding: var(--section-padding);
-
   & .container {
     width: min(120rem, calc(100% - 4rem));
     margin-inline: auto;
     padding: 1rem 2rem;
-    text-align: center;
-  }
 
-  & .section-description {
-    max-width: 65rem;
-    margin: 2rem auto 6rem;
-    font-size: var(--fs-lg);
-    color: var(--muted-color);
-    line-height: 1.8;
-  }
+    & .section-description {
+      max-width: 65rem;
+      margin: 2rem auto 6rem;
+      font-size: var(--fs-lg);
+    }
 
-  & .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    & .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
 
-    & .skill-card {
-      background: var(--card-color);
-      border: 1px solid var(--border-color);
-      border-radius: 2rem;
-      padding: 3rem 2rem;
-      transition: var(--transition);
-      & h3 {
-        font-size: var(--fs-xl);
-        color: var(--heading-color);
-        margin-bottom: 1rem;
-      }
+      & .skill-card {
+        border-radius: 2rem;
+        padding: 3rem 2rem;
+        & h3 {
+          font-size: var(--fs-xl);
+          color: var(--heading-color);
+          margin-bottom: 1rem;
+        }
 
-      & p {
-        font-size: var(--fs-base);
-        color: var(--muted-color);
-        line-height: 1.6;
-      }
-      & i {
-        font-size: 5rem;
-        margin-bottom: 2rem;
-      }
-
-      & .fa-html5 {
-        color: #e34f26;
-      }
-
-      & .fa-css3-alt {
-        color: #1572b6;
-      }
-
-      & .fa-js {
-        color: #f7df1e;
-      }
-
-      & .fa-git-alt {
-        color: #f05032;
-      }
-
-      & .fa-github {
-        color: var(--heading-color);
-      }
-
-      &:hover {
-        transform: translateY(-8px);
-        border-color: var(--primary-color);
-        box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
-
+        & p {
+          font-size: var(--fs-base);
+          color: var(--muted-color);
+          line-height: 1.6;
+        }
         & i {
-          transform: scale(1.1);
-          transition: transform var(--transition);
+          font-size: 5rem;
+          margin-bottom: 2rem;
+        }
+
+        & .fa-html5 {
+          color: #e34f26;
+        }
+
+        & .fa-css3-alt {
+          color: #1572b6;
+        }
+
+        & .fa-js {
+          color: #f7df1e;
+        }
+
+        & .fa-git-alt {
+          color: #f05032;
+        }
+
+        & .fa-github {
+          color: var(--heading-color);
+        }
+
+        &:hover {
+          transform: translateY(-8px);
+          border-color: var(--primary-color);
+          box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+
+          & i {
+            transform: scale(1.1);
+            transition: transform var(--transition);
+          }
         }
       }
     }
@@ -553,99 +574,89 @@ body.menu-open {
 /* Start Projects Section */
 
 .projects-section {
-  padding: var(--section-padding);
-
   & .container {
-    width: min(120rem, calc(100% - 4rem));
-    margin-inline: auto;
-    padding: 1rem 2rem;
-    text-align: center;
-  }
+    & .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
 
-  & .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-
-    & .project-card {
-      background: var(--card-color);
-      border: 1px solid var(--border-color);
-      border-radius: 2rem;
-      overflow: hidden;
-      transition: var(--transition);
-
-      & .project-image {
+      & .project-card {
+        border-radius: 2rem;
         overflow: hidden;
 
-        & img {
-          width: 100%;
-          height: 24rem;
-          object-fit: cover;
-          display: block;
-          transition: transform var(--transition);
-          &:hover {
-            transform: scale(1.05);
-          }
-        }
-      }
+        & .project-image {
+          overflow: hidden;
 
-      &:hover {
-        transform: translateY(-8px);
-        border-color: var(--primary-color);
-        box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
-      }
-      & .project-content {
-        padding: 2.5rem;
-        text-align: left;
-
-        & h3 {
-          font-size: var(--fs-xl);
-          color: var(--heading-color);
-          margin-bottom: 1.2rem;
-        }
-
-        & p {
-          font-size: var(--fs-base);
-          color: var(--muted-color);
-          line-height: 1.8;
-          margin-bottom: 2rem;
-        }
-
-        & .project-tech {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
-          margin-bottom: 2.5rem;
-
-          & span {
-            padding: 0.6rem 1.4rem;
-            border-radius: var(--radius-full);
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--primary-color);
-            font-size: var(--fs-sm);
-            font-weight: var(--fw-medium);
-          }
-        }
-        & .project-links {
-          display: flex;
-          gap: 1.5rem;
-
-          & a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 1.8rem;
-            font-size: var(--fs-base);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-full);
-            text-decoration: none;
-            color: var(--heading-color);
-            transition: var(--transition);
-
+          & img {
+            width: 100%;
+            height: 22rem;
+            object-fit: cover;
+            display: block;
+            transition: transform var(--transition);
             &:hover {
-              background-color: var(--primary-color);
-              border-color: var(--primary-color);
-              color: white;
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        &:hover {
+          transform: translateY(-8px);
+          border-color: var(--primary-color);
+          box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+        }
+        & .project-content {
+          padding: 2.5rem;
+          text-align: left;
+
+          & h3 {
+            font-size: var(--fs-xl);
+            color: var(--heading-color);
+            margin-bottom: 1.2rem;
+          }
+
+          & p {
+            font-size: var(--fs-base);
+            color: var(--muted-color);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+          }
+
+          & .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+
+            & span {
+              padding: 0.6rem 1.4rem;
+              border-radius: var(--radius-full);
+              background: rgba(56, 189, 248, 0.1);
+              color: var(--primary-color);
+              font-size: var(--fs-sm);
+              font-weight: var(--fw-medium);
+            }
+          }
+          & .project-links {
+            display: flex;
+            gap: 1.5rem;
+
+            & a {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.8rem;
+              padding: 1rem 1.8rem;
+              font-size: var(--fs-base);
+              border: 1px solid var(--border-color);
+              border-radius: var(--radius-full);
+              text-decoration: none;
+              color: var(--heading-color);
+              transition: var(--transition);
+
+              &:hover {
+                background-color: var(--primary-color);
+                border-color: var(--primary-color);
+                color: white;
+              }
             }
           }
         }
@@ -659,14 +670,7 @@ body.menu-open {
 /* Start Contact Section */
 
 .contact-section {
-  padding: var(--section-padding);
-
   & .container {
-    width: min(120rem, calc(100% - 4rem));
-    margin-inline: auto;
-    padding-inline: 2rem;
-    text-align: center;
-
     & .contact-wrapper {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
@@ -683,10 +687,7 @@ body.menu-open {
           align-items: center;
           gap: 2rem;
           padding: 2rem;
-          background: var(--card-color);
-          border: 1px solid var(--border-color);
           border-radius: 2rem;
-          transition: var(--transition);
 
           &:hover {
             transform: translateY(-6px);
@@ -784,15 +785,10 @@ body.menu-open {
 /* Start Footer Section */
 
 .footer {
-  padding: var(--section-padding);
   border-top: 1px solid var(--border-color);
   background-color: var(--surface-color);
 
   & .container {
-    width: min(120rem, calc(100% - 4rem));
-    margin-inline: auto;
-    padding-inline: 2rem;
-
     & .footer-content {
       display: flex;
       align-items: flex-start;
@@ -871,7 +867,6 @@ body.menu-open {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          gap: 1.6rem;
 
           & a {
             display: grid;
@@ -925,11 +920,11 @@ body.menu-open {
 }
 /* End Footer Section */
 
-/* One click button */
+/* Back To Top Button */
 .scroll-top-btn {
   position: fixed;
-  bottom: 2.5rem;
-  right: 2.5rem;
+  right: 2rem;
+  bottom: 2rem;
 
   width: 5rem;
   height: 5rem;
@@ -947,6 +942,8 @@ body.menu-open {
   font-size: 2rem;
   cursor: pointer;
 
+  box-shadow: var(--shadow-md);
+
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
@@ -954,11 +951,11 @@ body.menu-open {
   transition: var(--transition);
 
   z-index: 999;
+}
 
-  &:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-3px);
-  }
+.scroll-top-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-4px);
 }
 
 .scroll-top-btn.show {
@@ -972,8 +969,8 @@ body.menu-open {
   opacity: 0;
   transform: translateY(60px);
   transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+    opacity 1s ease,
+    transform 1s ease;
 
   &.active {
     opacity: 1;

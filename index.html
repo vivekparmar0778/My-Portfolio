@@ -1,13 +1,56 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Basic -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vivek Parmar | Frontend Developer</title>
+
+    <!-- SEO -->
+    <title>Vivek Parmar | Frontend Developer Portfolio</title>
+
+    <meta
+      name="description"
+      content="Vivek Parmar is a Frontend Developer skilled in HTML, CSS, JavaScript, and responsive web design. Explore projects, skills, and contact information."
+    />
+
+    <meta
+      name="keywords"
+      content="Vivek Parmar, Frontend Developer, HTML, CSS, JavaScript, Portfolio, Responsive Web Design, Web Developer"
+    />
+
+    <meta name="author" content="Vivek Parmar" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0F172A" />
+
+    <!-- Open Graph (Social Sharing) -->
+    <meta
+      property="og:title"
+      content="Vivek Parmar | Frontend Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Explore my frontend development projects, skills, and portfolio."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Replace after deployment -->
+    <meta property="og:url" content="https://vivek-frontend-portfolio.netlify.app/" />
+
+    <!-- Replace with your preview image -->
+    <meta
+      property="og:image"
+      content="https://vivek-frontend-portfolio.netlify.app/assets/preview.png"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -17,7 +60,7 @@
     <header class="header">
       <div class="container">
         <a href="#home" class="logo">
-          <img src="assets/favicon.png" alt="Vivek Parmar" />
+          <img src="assets/favicon.png" alt="Vivek Parmar" loading="lazy" />
         </a>
 
         <nav class="navbar">
@@ -69,7 +112,9 @@
 
           <h1 class="hero-title">Vivek Parmar</h1>
 
-          <h2 class="hero-subtitle">Frontend Developer</h2>
+          <h2 class="hero-subtitle">
+            <span id="typing-text"></span>
+          </h2>
 
           <p class="hero-description">
             I build fast, responsive, and modern web experiences with clean,
@@ -121,6 +166,7 @@
           <img
             src="images/hero_img.webp"
             alt="Vivek Parmar - Frontend Developer"
+            loading="lazy"
           />
         </div>
 
@@ -224,7 +270,11 @@
         <div class="projects-grid">
           <article class="project-card">
             <div class="project-image">
-              <img src="assets/project-1.webp" alt="Project Name" />
+              <img
+                src="assets/project-1.webp"
+                alt="Project Name"
+                loading="lazy"
+              />
             </div>
 
             <div class="project-content">
@@ -318,6 +368,7 @@
             class="contact-form"
             action="https://api.web3forms.com/submit"
             method="POST"
+            id="contact-form"
           >
             <input
               type="hidden"
@@ -341,6 +392,7 @@
             <input
               type="text"
               name="name"
+              id="name"
               placeholder="Your Name"
               autocomplete="off"
               required
@@ -349,6 +401,7 @@
             <input
               type="email"
               name="email"
+              id="email"
               placeholder="Your Email"
               autocomplete="off"
               required
@@ -356,6 +409,7 @@
 
             <textarea
               name="message"
+              id="message"
               rows="6"
               placeholder="Your Message"
               autocomplete="off"
@@ -373,7 +427,10 @@
         <div class="footer-content">
           <div class="footer-brand">
             <a href="#home" class="footer-logo"
-              ><img src="assets/favicon.png" alt="Vivek Parmar Logo"
+              ><img
+                src="assets/favicon.png"
+                alt="Vivek Parmar Logo"
+                loading="lazy"
             /></a>
             <h3 class="footer-name">Vivek Parmar</h3>
             <p class="footer-description">
@@ -434,7 +491,7 @@
       </div>
     </footer>
 
-    <button class="scroll-top-btn" aria-label="Scroll to Top">
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to Top">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
     <script src="js/script.js" defer></script>

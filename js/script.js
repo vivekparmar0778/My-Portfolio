@@ -5,15 +5,58 @@ const menuOverlay = document.querySelector(".menu-overlay");
 const navLinks = document.querySelectorAll(".nav-links a");
 const header = document.querySelector(".header");
 
+/* hero section typing effect on text */
+const typingText = document.getElementById("typing-text");
+
+const words = [
+  "Frontend Developer",
+  "JavaScript Developer",
+  "React Learner",
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+
+  if (!isDeleting) {
+    typingText.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentWord.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1500);
+      return;
+    }
+  } else {
+    typingText.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? 80 : 120);
+}
+
+typeEffect();
+
+
 /* bottom to top button */
-const scrollTopBtn = document.querySelector(".scroll-top-btn");
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
+  if (window.scrollY > 300) {
     scrollTopBtn.classList.add("show");
   } else {
     scrollTopBtn.classList.remove("show");
   }
 });
+
 scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
@@ -105,4 +148,33 @@ const observer = new IntersectionObserver((entries) => {
 
 revealElements.forEach((element) => {
   observer.observe(element);
+});
+
+// ===========================
+// Contact Form
+// ===========================
+
+const contactForm = document.getElementById("contactForm");
+const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+contactForm.addEventListener("submit", (event) => {
+  // Browser validation
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
+    return;
+  }
+
+  // Message validation
+  const message = document.getElementById("message").value.trim();
+
+  if (message.length < 10) {
+    event.preventDefault();
+    alert("Message should be at least 10 characters.");
+    document.getElementById("message").focus();
+    return;
+  }
+
+  // Loading State
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
 });
