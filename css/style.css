@@ -671,6 +671,7 @@ body.menu-open {
 
 .contact-section {
   & .container {
+  
     & .contact-wrapper {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;

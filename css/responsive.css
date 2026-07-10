@@ -132,6 +132,7 @@
   /* Contact Responsive */
   .contact-section {
     & .container {
+      padding: 0;
       & .contact-wrapper {
         gap: 3rem;
       }
@@ -432,8 +433,10 @@
   /* Contact Responsive */
   .contact-section {
     & .container {
+      padding: 0;
       & .contact-wrapper {
         grid-template-columns: 1fr;
+        gap: 3rem;
       }
 
       & .contact-info {
@@ -442,6 +445,8 @@
 
       & .contact-form {
         order: 1;
+        width: 100%;
+    min-width: 0;
       }
     }
   }
@@ -567,7 +572,7 @@
 
       & .project-card {
         width: 100%;
-        max-width: 50rem; 
+        max-width: 50rem;
 
         & .project-image {
           & img {
@@ -602,7 +607,7 @@
   .contact-section {
     padding-block: 4rem;
     & .container {
-      padding-inline: 0;
+      padding: 0;
       & .contact-wrapper {
         display: grid;
         grid-template-columns: 1fr;
@@ -728,21 +733,77 @@
 
   /* Contact */
 
-  .contact-section .container {
-    padding-inline: 1.5rem;
+ .contact-section .container {
+    width: calc(100% - 2.4rem);
+    padding: 2rem;
+  }
+
+  .contact-wrapper {
+    gap: 2.5rem;
   }
 
   .contact-form,
+  .contact-info {
+    width: 100%;
+    min-width: 0;
+  }
+
   .contact-form input,
   .contact-form textarea,
   .contact-form button {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* ===========================
+   Large Phones (430px)
+=========================== */
+
+@media (max-width: 430px) {
+  .contact-section .container {
+    padding-inline: 1.2rem;
+  }
+
+  .contact-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 }
 
 /* ===========================
-   Extra Small Devices
+   Medium Phones (390px)
+=========================== */
+
+@media (max-width: 390px) {
+  .contact-section .container {
+    padding-inline: 1rem;
+  }
+
+  .contact-form {
+    padding: 1.8rem 1.2rem;
+  }
+}
+
+/* ===========================
+   Small Phones (360px)
 =========================== */
 
 @media (max-width: 360px) {
@@ -750,15 +811,31 @@
     font-size: 56.25%;
   }
 
-  .project-image img {
-    height: 18rem;
-  }
-
-  .project-content {
-    padding: 1.6rem;
-  }
-
   .contact-section .container {
-    padding-inline: 1rem;
+    padding-inline: 0.8rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===========================
+   Very Small Phones (320px)
+=========================== */
+
+@media (max-width: 320px) {
+  .contact-section .container {
+    padding-inline: 0.5rem;
+  }
+
+  .contact-form {
+    padding: 1.2rem 0.8rem;
   }
 }
