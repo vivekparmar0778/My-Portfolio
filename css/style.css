@@ -630,8 +630,8 @@ body.menu-open {
             & span {
               padding: 0.6rem 1.4rem;
               border-radius: var(--radius-full);
-              background: rgba(56, 189, 248, 0.1);
-              color: var(--primary-color);
+              background: rgba(230, 248, 255, 0.1);
+              color: var(--heading-color-color);
               font-size: var(--fs-sm);
               font-weight: var(--fw-medium);
             }
