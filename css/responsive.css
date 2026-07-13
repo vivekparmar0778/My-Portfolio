@@ -28,7 +28,7 @@
 
   .hero-section {
     padding-block: 5rem;
-
+    scroll-margin-top: 8rem;
     & .container {
       grid-template-columns: 1fr;
       gap: 5rem;
@@ -205,7 +205,7 @@
             gap: 1.2rem;
 
             & img {
-              width: 4rem;
+              width: 5rem;
               aspect-ratio: 1;
               display: block;
               border-radius: 50%;
@@ -446,7 +446,7 @@
       & .contact-form {
         order: 1;
         width: 100%;
-    min-width: 0;
+        min-width: 0;
       }
     }
   }
@@ -553,6 +553,7 @@
   /* Skills Responsive */
   .skills-section {
     padding-block: 4rem;
+    scroll-margin-top: 4rem;
     & .container {
       & .skills-grid {
         grid-template-columns: 1fr;
@@ -562,7 +563,7 @@
   /* Projects Responsive */
   .projects-section {
     padding-block: 4rem;
-
+scroll-margin-top: 4rem;
     & .container {
       & .projects-grid {
         grid-template-columns: 1fr;
@@ -606,6 +607,7 @@
   /* Contact Responsive */
   .contact-section {
     padding-block: 4rem;
+    scroll-margin-top: 5rem;
     & .container {
       padding: 0;
       & .contact-wrapper {
@@ -733,7 +735,7 @@
 
   /* Contact */
 
- .contact-section .container {
+  .contact-section .container {
     width: calc(100% - 2.4rem);
     padding: 2rem;
   }
@@ -756,7 +758,6 @@
     box-sizing: border-box;
   }
 }
-
 
 /* ===========================
    Large Phones (430px)

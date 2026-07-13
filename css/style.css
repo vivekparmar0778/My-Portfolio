@@ -256,15 +256,17 @@ body.menu-open {
 /* Start Hero Section */
 
 .hero-section {
-  min-height: calc(100vh - var(--header-height));
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 
   & .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    padding-block: 0;
 
     & .hero-content {
       display: flex;
@@ -506,7 +508,7 @@ body.menu-open {
 
     & .section-description {
       max-width: 65rem;
-      margin: 2rem auto 6rem;
+      margin: 2rem auto 4rem;
       font-size: var(--fs-lg);
     }
 
